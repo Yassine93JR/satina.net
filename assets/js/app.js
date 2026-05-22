@@ -88,6 +88,23 @@
     );
   }
 
+  function parisCapsuleHtml() {
+    return (
+      '<aside class="paris-capsule crystal paris-capsule--nav" id="paris-capsule" aria-live="polite">' +
+      '  <span class="paris-capsule__dot" aria-hidden="true"></span>' +
+      '  <strong class="paris-capsule__city" data-i18n="widget.paris">Paris</strong>' +
+      '  <span class="paris-capsule__sep" aria-hidden="true">·</span>' +
+      '  <span class="paris-capsule__time" id="paris-time">--:--</span>' +
+      '  <span class="paris-capsule__sep" aria-hidden="true">·</span>' +
+      '  <span class="paris-capsule__weather" aria-label="Météo Paris">' +
+      '    <span class="paris-capsule__weather-icon" id="paris-weather-icon" aria-hidden="true">🌤️</span>' +
+      '    <span class="paris-capsule__temp" id="paris-weather-temp">—</span>' +
+      "  </span>" +
+      '  <span class="paris-capsule__avail" data-i18n="widget.available">7j/7</span>' +
+      "</aside>"
+    );
+  }
+
   function headerHtml(active) {
     return (
       '<header class="site-header" role="banner">' +
@@ -97,6 +114,7 @@
       '      <span class="site-header__name">Satina IT Paris</span>' +
       '    </a>' +
       '    <nav class="site-nav" aria-label="Navigation principale">' + navHtml(active) + "</nav>" +
+      '    <div class="site-header__status">' + parisCapsuleHtml() + "</div>" +
       '    <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="mobile-nav" aria-label="Menu">' +
       '      <span></span><span></span><span></span>' +
       "    </button>" +
@@ -167,16 +185,6 @@
   function floatWidgetsHtml() {
     return (
       '<div id="float-widgets" class="float-widgets" aria-hidden="false">' +
-      '  <aside class="paris-capsule crystal" id="paris-capsule" aria-live="polite">' +
-      '    <span class="paris-capsule__dot" aria-hidden="true"></span>' +
-      '    <strong class="paris-capsule__city" data-i18n="widget.paris">Paris</strong>' +
-      '    <span class="paris-capsule__sep" aria-hidden="true">·</span>' +
-      '    <span class="paris-capsule__time" id="paris-time">--:--</span>' +
-      '    <span class="paris-capsule__sep" aria-hidden="true">·</span>' +
-      '    <span class="paris-capsule__weather-icon" id="paris-weather-icon" aria-hidden="true">🌤️</span>' +
-      '    <span class="paris-capsule__temp" id="paris-weather-temp">—</span>' +
-      '    <span class="paris-capsule__avail" data-i18n="widget.available">7j/7</span>' +
-      "  </aside>" +
       '  <a href="https://wa.me/33607094206?text=' + encodeURIComponent("Bonjour Satina IT Paris, ") +
       '" class="whatsapp-float" id="whatsapp-float" target="_blank" rel="noopener noreferrer" data-i18n-title="widget.whatsapp_aria" title="WhatsApp Satina">' +
       '    <span class="whatsapp-float__pulse" aria-hidden="true"></span>' +
