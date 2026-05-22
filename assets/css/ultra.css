@@ -1,0 +1,108 @@
+/* Satina IT Paris — couche ultra premium (Awwwards / Webflow) */
+
+.hero-immersive::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 120% 80% at 50% 100%, rgba(56, 189, 248, 0.15), transparent 55%);
+  pointer-events: none;
+  z-index: 2;
+}
+
+.hero-slide-panel.is-active .hero-title {
+  position: relative;
+}
+
+.hero-slide-panel.is-active .tag {
+  box-shadow: 0 0 40px var(--accent-glow), inset 0 1px 0 rgba(255, 255, 255, 0.15);
+}
+
+.hero-panel-cta .btn {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-panel-cta .btn-primary {
+  box-shadow: 0 12px 48px var(--accent-glow), 0 0 0 1px rgba(255, 255, 255, 0.1) inset;
+}
+
+.hero-vignette {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  box-shadow: inset 0 0 120px rgba(3, 5, 8, 0.65);
+}
+
+.references-premium {
+  background: linear-gradient(180deg, transparent, rgba(56, 189, 248, 0.03) 50%, transparent);
+}
+
+.partners-marquee-wrap::before,
+.partners-marquee-wrap::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 120px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.partners-marquee-wrap::before {
+  left: 0;
+  background: linear-gradient(90deg, var(--bg), transparent);
+}
+
+.partners-marquee-wrap::after {
+  right: 0;
+  background: linear-gradient(270deg, var(--bg), transparent);
+}
+
+.reference-card {
+  transition: transform 0.55s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.55s ease, border-color 0.4s ease;
+}
+
+.reference-card:hover {
+  transform: translateY(-14px) scale(1.04);
+}
+
+.section-label {
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-weight: 700;
+}
+
+.glass-card,
+.service-card,
+.cta-band {
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.4s ease;
+}
+
+.lang-picker.is-open .lang-picker__menu {
+  transform: translateY(0) scale(1);
+  box-shadow: var(--crystal-shadow), 0 28px 80px rgba(0, 0, 0, 0.5);
+}
+
+.paris-capsule {
+  animation: capsuleGlow 4s ease-in-out infinite alternate;
+}
+
+@keyframes capsuleGlow {
+  0% { box-shadow: var(--crystal-shadow); }
+  100% { box-shadow: var(--crystal-shadow), 0 0 28px var(--accent-glow); }
+}
+
+.page-hero--premium h1 {
+  background: linear-gradient(135deg, var(--text) 0%, var(--text-muted) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+[data-theme="light"] .page-hero--premium h1 {
+  background: linear-gradient(135deg, var(--text) 0%, var(--text-muted) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+}

@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-i18n="meta.home_title">Satina IT Paris — Expert IT premium</title>
+  <meta name="description" content="Assistance, conseil, formation et help desk IT à Paris. Disponible 7j/7." data-i18n="meta.home_desc">
+  <link rel="icon" href="assets/images/logo-sat1.png" type="image/png">
+  <link rel="stylesheet" href="assets/css/theme.css">
+  <link rel="stylesheet" href="assets/css/site.css">
+  <link rel="stylesheet" href="assets/css/ultra.css">
+  <script src="assets/js/theme.js" defer></script>
+</head>
+<body class="js-ready page-home">
+  <a href="#promise" class="skip-link" data-i18n="common.skip">Aller au contenu</a>
+  <canvas id="ambient-canvas" aria-hidden="true"></canvas>
+  <div id="site-header"></div>
+
+  <main>
+    <section class="hero-cinematic hero-immersive" aria-label="Présentation" data-hero-parallax>
+      <div class="hero-fx" aria-hidden="true">
+        <div class="hero-fx__mesh"></div>
+        <div class="hero-fx__grid"></div>
+        <div class="hero-fx__beam"></div>
+        <div class="hero-fx__noise"></div>
+        <span class="hero-orb hero-orb--1"></span>
+        <span class="hero-orb hero-orb--2"></span>
+        <span class="hero-orb hero-orb--3"></span>
+        <span class="hero-float-chip hero-float-chip--1">Cloud</span>
+        <span class="hero-float-chip hero-float-chip--2" data-i18n="widget.paris">Paris</span>
+        <span class="hero-float-chip hero-float-chip--3">7j/7</span>
+      </div>
+
+      <div class="hero-cinematic__slides">
+        <div class="hero-slide is-active" data-slide="0">
+          <div class="hero-slide__bg" style="background-image:url('assets/images/itretH-scaled.jpg')"></div>
+          <div class="hero-slide__overlay"></div>
+        </div>
+        <div class="hero-slide" data-slide="1">
+          <div class="hero-slide__bg" style="background-image:url('assets/images/ordi-satina.png')"></div>
+          <div class="hero-slide__overlay"></div>
+        </div>
+        <div class="hero-slide" data-slide="2">
+          <div class="hero-slide__bg" style="background-image:url('assets/images/cloud-satina.png')"></div>
+          <div class="hero-slide__overlay"></div>
+        </div>
+      </div>
+      <div class="hero-vignette" aria-hidden="true"></div>
+
+      <div class="hero-cinematic__content container">
+        <div class="hero-slide-counter" aria-hidden="true">
+          <span class="hero-slide-counter__cur">01</span>
+          <span class="hero-slide-counter__sep">/</span>
+          <span class="hero-slide-counter__total">03</span>
+        </div>
+        <div class="hero-slide-panel is-active" data-panel="0">
+          <span class="tag" data-i18n="home.slide1_tag">Infrastructure</span>
+          <h1 class="hero-title"><span data-i18n="home.slide1_title">Infrastructure & Réseau</span> <span class="accent" data-i18n="home.slide1_accent">premium</span></h1>
+          <p data-i18n="home.slide1_desc">Architecture réseau, cloud et continuité — conçus pour la performance et la sérénité.</p>
+          <div class="hero-panel-cta">
+            <a href="contact.html" class="btn btn-primary" data-i18n="home.cta_primary">Demander une intervention</a>
+            <a href="services.html" class="btn btn-ghost crystal-outline" data-i18n="home.cta_secondary">Voir nos services</a>
+          </div>
+        </div>
+        <div class="hero-slide-panel" data-panel="1">
+          <span class="tag" data-i18n="home.slide2_tag">Dépannage</span>
+          <h1 class="hero-title"><span data-i18n="home.slide2_title">Dépannage IT Paris</span> <span class="accent" data-i18n="home.slide2_accent">& toute la région</span></h1>
+          <p data-i18n="home.slide2_desc">Pannes, lenteurs, postes et réseaux — intervention rapide sur site ou à distance en Île-de-France. Diagnostic précis, réparation durable, disponibilité 7j/7.</p>
+          <div class="hero-panel-cta">
+            <a href="services/assistance.html" class="btn btn-primary" data-i18n="home.slide2_cta_primary">Demander un dépannage</a>
+            <a href="services.html" class="btn btn-ghost crystal-outline" data-i18n="home.slide2_cta_secondary">Assistance & services</a>
+          </div>
+        </div>
+        <div class="hero-slide-panel" data-panel="2">
+          <span class="tag" data-i18n="home.slide3_tag">Support</span>
+          <h1 class="hero-title"><span data-i18n="home.slide3_title">Support IT 7j/7</span> <span class="accent" data-i18n="home.slide3_accent">& solutions modernes</span></h1>
+          <p data-i18n="home.slide3_desc">Intervention rapide, expertise terrain — particuliers, PME et filiales internationales.</p>
+          <div class="hero-panel-cta">
+            <a href="tel:+33607094206" class="btn btn-primary" data-i18n="home.cta_call">06 07 09 42 06</a>
+            <a href="contact.html" class="btn btn-ghost crystal-outline" data-i18n="home.cta_form">Écrire à l'équipe</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="crystal-stats" id="stats" aria-label="Chiffres clés">
+        <div class="crystal-stats__inner">
+          <article class="crystal-stat" data-count-to="20" data-suffix="+">
+            <p class="crystal-stat__num"><span class="stat-item__value">0+</span></p>
+            <p class="crystal-stat__label" data-i18n="home.stat_years">ans d'expertise</p>
+          </article>
+          <article class="crystal-stat" data-count-to="7" data-count-mode="fraction" data-denom="7">
+            <p class="crystal-stat__num"><span class="stat-item__value">0/7</span></p>
+            <p class="crystal-stat__label" data-i18n="home.stat_avail">disponibilité</p>
+          </article>
+          <article class="crystal-stat" data-count-to="24" data-suffix="h">
+            <p class="crystal-stat__num"><span class="stat-item__value">0h</span></p>
+            <p class="crystal-stat__label" data-i18n="home.stat_response">réponse rapide</p>
+          </article>
+          <article class="crystal-stat" data-count-to="100" data-suffix="%">
+            <p class="crystal-stat__num"><span class="stat-item__value">0%</span></p>
+            <p class="crystal-stat__label" data-i18n="home.stat_focus">engagement client</p>
+          </article>
+        </div>
+      </div>
+
+      <div class="hero-cinematic__dots" role="tablist" aria-label="Slides">
+        <button type="button" class="hero-dot is-active" aria-label="Slide 1" data-goto="0"><span class="hero-dot__fill"></span></button>
+        <button type="button" class="hero-dot" aria-label="Slide 2" data-goto="1"><span class="hero-dot__fill"></span></button>
+        <button type="button" class="hero-dot" aria-label="Slide 3" data-goto="2"><span class="hero-dot__fill"></span></button>
+      </div>
+      <div class="hero-scroll-hint" data-i18n="home.scroll_hint">Explorer</div>
+    </section>
+
+    <hr class="section-divider-wave" />
+
+    <section class="section section--glow section--mesh" id="promise" data-section-depth>
+      <div class="container promise-grid">
+        <div class="reveal">
+          <span class="section-label" data-i18n="home.promise_label">Notre approche</span>
+          <h2 data-i18n="home.promise_title">L'expertise IT pensée pour durer.</h2>
+          <p data-i18n="home.promise_text">Une équipe experte qui transforme vos besoins en solutions — claires, rapides et mesurables, à Paris et en région.</p>
+          <ul class="promise-list">
+            <li data-i18n="home.promise_1">Interlocuteur dédié, pas de ticket perdu</li>
+            <li data-i18n="home.promise_2">Solutions sur mesure, sans jargon inutile</li>
+            <li data-i18n="home.promise_3">Particuliers, PME et filiales internationales</li>
+          </ul>
+          <a href="a-propos.html" class="btn btn-primary mt-2" data-i18n="home.promise_cta">Découvrir Satina</a>
+        </div>
+        <div class="glass-card reveal">
+          <img src="assets/images/IT_Technolog54.jpg" alt="Expertise IT Satina" width="600" height="400" loading="lazy">
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--alt section--grid-bg" id="services" data-section-depth>
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="section-label" data-i18n="home.services_label">Expertises</span>
+          <h2 data-i18n="home.services_title">Six expertises, un seul standard</h2>
+          <p data-i18n="home.services_lead">Urgence, retail, particuliers, PME, formation ou stratégie — la même exigence Satina IT Paris.</p>
+        </div>
+        <div class="services-grid">
+          <article class="service-card reveal">
+            <span class="service-card__num" aria-hidden="true">01</span>
+            <h3 data-i18n="home.svc_support_title">Assistance & dépannage</h3>
+            <p data-i18n="home.svc_support_desc">Diagnostic rapide, correction durable, multi-plateformes.</p>
+            <a href="services/assistance.html" class="link-arrow" data-i18n="home.learn_more">En savoir plus</a>
+          </article>
+          <article class="service-card reveal">
+            <span class="service-card__num" aria-hidden="true">02</span>
+            <h3 data-i18n="home.svc_helpdesk_title">IT retail & help desk</h3>
+            <p data-i18n="home.svc_helpdesk_desc">IMACD, DXN, ITIL®4 — filiales internationales à Paris.</p>
+            <a href="services/helpdesk.html" class="link-arrow" data-i18n="home.learn_more">En savoir plus</a>
+          </article>
+          <article class="service-card reveal">
+            <span class="service-card__num" aria-hidden="true">03</span>
+            <h3 data-i18n="home.svc_home_title">Particuliers</h3>
+            <p data-i18n="home.svc_home_desc">RDV rapide, seniors, crédit d'impôt Boorlo.</p>
+            <a href="services/particuliers.html" class="link-arrow" data-i18n="home.learn_more">En savoir plus</a>
+          </article>
+          <article class="service-card reveal">
+            <span class="service-card__num" aria-hidden="true">04</span>
+            <h3 data-i18n="home.svc_pro_title">Professionnels</h3>
+            <p data-i18n="home.svc_pro_desc">PME et cabinets : IT aligné sur votre activité.</p>
+            <a href="services/professionnels.html" class="link-arrow" data-i18n="home.learn_more">En savoir plus</a>
+          </article>
+          <article class="service-card reveal">
+            <span class="service-card__num" aria-hidden="true">05</span>
+            <h3 data-i18n="home.svc_train_title">Formation</h3>
+            <p data-i18n="home.svc_train_desc">Autonomie sur vos outils critiques.</p>
+            <a href="services/formation.html" class="link-arrow" data-i18n="home.learn_more">En savoir plus</a>
+          </article>
+          <article class="service-card reveal">
+            <span class="service-card__num" aria-hidden="true">06</span>
+            <h3 data-i18n="home.svc_advice_title">Conseil digital</h3>
+            <p data-i18n="home.svc_advice_desc">Cloud, sécurité et feuille de route claire.</p>
+            <a href="conseil.html" class="link-arrow" data-i18n="home.learn_more">En savoir plus</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--depth" id="vision" data-section-depth>
+      <div class="container vision-block">
+        <div class="vision-visual reveal">
+          <img src="assets/images/cloud-satina.png" alt="Cloud et infrastructure" loading="lazy">
+        </div>
+        <div class="reveal">
+          <span class="section-label" data-i18n="home.vision_label">Vision</span>
+          <h2 data-i18n="home.vision_title">Le numérique, levier de performance</h2>
+          <p data-i18n="home.vision_text">Cybersécurité, cloud, productivité : des environnements fiables, évolutifs et compréhensibles.</p>
+          <a href="conseil.html" class="btn btn-ghost mt-2" data-i18n="home.vision_cta">Parler stratégie</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="references-premium section--alt" id="partners">
+      <div class="references-premium__glow" aria-hidden="true"></div>
+      <div class="container references-premium__head">
+        <div class="section-head center reveal">
+          <span class="section-label" data-i18n="home.partners_label">Références</span>
+          <h2 class="references-premium__title" data-i18n="home.partners_title">Des entreprises exigeantes nous confient leur infrastructure</h2>
+          <p class="references-premium__lead" data-i18n="home.partners_lead">Ils choisissent Satina IT Paris pour leur exigence technologique.</p>
+        </div>
+      </div>
+      <div class="partners-marquee-wrap reveal" aria-label="Logos partenaires">
+        <div class="partners-marquee">
+          <div class="partners-track">
+            <div class="reference-card"><img src="assets/images/chaussealogo1.jpg" alt="Chaussea" width="280" height="112"></div>
+            <div class="reference-card"><img src="assets/images/pharmavie-1024x576.jpg" alt="Pharmavie" width="280" height="112"></div>
+            <div class="reference-card"><img src="assets/images/Ville_de_Paris_logo.png" alt="Ville de Paris" width="280" height="112"></div>
+            <div class="reference-card"><img src="assets/images/vcountlogo.png" alt="VCount" width="280" height="112"></div>
+            <div class="reference-card"><img src="assets/images/partenaire-easymicro.png" alt="EasyMicro" width="280" height="112"></div>
+            <div class="reference-card"><img src="assets/images/partenaire-canalinternet.png" alt="Canal Internet" width="280" height="112"></div>
+            <div class="reference-card" aria-hidden="true"><img src="assets/images/chaussealogo1.jpg" alt="" width="280" height="112"></div>
+            <div class="reference-card" aria-hidden="true"><img src="assets/images/pharmavie-1024x576.jpg" alt="" width="280" height="112"></div>
+            <div class="reference-card" aria-hidden="true"><img src="assets/images/Ville_de_Paris_logo.png" alt="" width="280" height="112"></div>
+            <div class="reference-card" aria-hidden="true"><img src="assets/images/vcountlogo.png" alt="" width="280" height="112"></div>
+            <div class="reference-card" aria-hidden="true"><img src="assets/images/partenaire-easymicro.png" alt="" width="280" height="112"></div>
+            <div class="reference-card" aria-hidden="true"><img src="assets/images/partenaire-canalinternet.png" alt="" width="280" height="112"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="cta-band reveal">
+          <h2 data-i18n="home.cta_title">Une urgence ou un projet ?</h2>
+          <p data-i18n="home.cta_lead">Un expert Satina vous répond et planifie l'intervention sans délai.</p>
+          <div class="btn-row">
+            <a href="tel:+33607094206" class="btn btn-primary" data-i18n="home.cta_call">06 07 09 42 06</a>
+            <a href="contact.html" class="btn btn-ghost" data-i18n="home.cta_form">Écrire à l'équipe</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="assets/js/locales.js"></script>
+  <script src="assets/js/i18n.js"></script>
+  <script src="assets/js/app.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="assets/js/paris-widget.js"></script>
+  <script src="assets/js/hero-slider.js"></script>
+  <script src="assets/js/stats-counter.js"></script>
+  <script src="assets/js/ambient-canvas.js"></script>
+  <script src="assets/js/motion.js"></script>
+  <script src="assets/js/ui.js"></script>
+  <script src="assets/js/immersive.js"></script>
+</body>
+</html>

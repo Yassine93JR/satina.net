@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-i18n="meta.contact_title">Contact — Satina IT Paris</title>
+  <link rel="icon" href="assets/images/logo-sat1.png" type="image/png">
+  <meta name="description" content="Contactez Satina à Paris — réponse rapide 7j/7." data-i18n="meta.contact_desc">
+  <link rel="stylesheet" href="assets/css/theme.css">
+  <link rel="stylesheet" href="assets/css/site.css">
+  <link rel="stylesheet" href="assets/css/ultra.css">
+  <script src="assets/js/theme.js" defer></script>
+</head>
+<body class="js-ready page-inner">
+  <canvas id="ambient-canvas" aria-hidden="true"></canvas>
+  <div id="site-header"></div>
+  <main>
+    <header class="page-hero page-hero--premium section--mesh reveal">
+      <div class="container">
+        <p class="breadcrumb"><a href="index.html" data-i18n="common.bc_home">Accueil</a> / <span data-i18n="contact.breadcrumb">Contact</span></p>
+        <h1 data-i18n="contact.title">Parlons de votre besoin</h1>
+        <p data-i18n="contact.lead">Urgence, projet ou question — réponse rapide garantie.</p>
+      </div>
+    </header>
+    <section class="section section--alt section--grid-bg reveal" data-section-depth>
+      <div class="container contact-grid">
+        <div class="glass-card">
+          <div class="contact-info-item">
+            <strong data-i18n="contact.address">Adresse</strong>
+            <p>16 rue de Vichy<br>75016 Paris, France</p>
+          </div>
+          <div class="contact-info-item">
+            <strong data-i18n="contact.email">E-mail</strong>
+            <p><a href="mailto:info@satina.fr">info@satina.fr</a></p>
+          </div>
+          <div class="contact-info-item">
+            <strong data-i18n="contact.phone">Téléphone</strong>
+            <p><a href="tel:+33607094206">06 07 09 42 06</a><br><a href="tel:+33145863296">01 45 86 32 96</a></p>
+          </div>
+          <div class="contact-info-item">
+            <strong data-i18n="contact.whatsapp">WhatsApp</strong>
+            <p><a href="https://wa.me/33607094206" class="btn btn-primary btn-sm" target="_blank" rel="noopener" data-i18n="contact.whatsapp_action">Ouvrir la conversation</a></p>
+          </div>
+          <p class="mt-2" style="font-size:0.9rem" data-i18n="contact.note">Disponible 7j/7 pour les urgences. RDV possible dans la journée pour les particuliers.</p>
+        </div>
+        <form class="glass-card" id="contact-form" action="#" method="post">
+          <div class="form-group">
+            <label for="name" data-i18n="contact.form_name">Nom complet</label>
+            <input type="text" id="name" name="name" required data-i18n-placeholder="contact.form_name">
+          </div>
+          <div class="form-group">
+            <label for="email" data-i18n="contact.form_email">E-mail</label>
+            <input type="email" id="email" name="email" required data-i18n-placeholder="contact.form_email">
+          </div>
+          <div class="form-group">
+            <label for="phone" data-i18n="contact.form_phone">Téléphone</label>
+            <input type="tel" id="phone" name="phone" data-i18n-placeholder="contact.form_phone">
+          </div>
+          <div class="form-group">
+            <label for="subject" data-i18n="contact.form_subject">Sujet</label>
+            <select id="subject" name="subject">
+              <option value="assist" data-i18n="contact.form_opt_assist">Assistance / dépannage</option>
+              <option value="pro" data-i18n="contact.form_opt_pro">Services professionnels</option>
+              <option value="home" data-i18n="contact.form_opt_home">Particulier</option>
+              <option value="counsel" data-i18n="contact.form_opt_counsel">Conseil / projet</option>
+              <option value="other" data-i18n="contact.form_opt_other">Autre</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="message" data-i18n="contact.form_message">Message</label>
+            <textarea id="message" name="message" required data-i18n-placeholder="contact.form_message"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary" data-i18n="contact.form_send">Envoyer</button>
+          <div class="form-success" id="form-success" data-i18n="contact.form_success">Merci ! Pour une réponse immédiate : 06 07 09 42 06 ou info@satina.fr</div>
+        </form>
+      </div>
+    </section>
+  </main>
+  <div id="site-footer"></div>
+  <script src="assets/js/locales.js"></script>
+  <script src="assets/js/i18n.js"></script>
+  <script src="assets/js/app.js"></script>
+  <script src="assets/js/paris-widget.js"></script>
+  <script src="assets/js/ambient-canvas.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="assets/js/motion.js"></script>
+  <script src="assets/js/ui.js"></script>
+  <script src="assets/js/immersive.js"></script>
+</body>
+</html>

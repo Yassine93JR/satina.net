@@ -1,0 +1,67 @@
+/* Satina IT Paris — design tokens (futuriste / Apple-tech) */
+:root,
+[data-theme="dark"] {
+  --bg: #030508;
+  --bg-elevated: #0a0e18;
+  --bg-glass: rgba(10, 14, 24, 0.72);
+  --surface: #0f1524;
+  --surface-hover: #161f32;
+  --text: #f0f4fc;
+  --text-muted: #9aa8c4;
+  --text-faint: #5c6b88;
+  --accent: #38bdf8;
+  --accent-2: #818cf8;
+  --accent-3: #a78bfa;
+  --accent-glow: rgba(56, 189, 248, 0.4);
+  --gradient: linear-gradient(135deg, #38bdf8 0%, #6366f1 45%, #a78bfa 100%);
+  --gradient-soft: linear-gradient(180deg, rgba(56, 189, 248, 0.14) 0%, rgba(99, 102, 241, 0.1) 50%, transparent 100%);
+  --gradient-mesh: radial-gradient(ellipse 80% 50% at 20% -10%, rgba(56, 189, 248, 0.18), transparent 50%),
+    radial-gradient(ellipse 60% 40% at 90% 10%, rgba(129, 140, 248, 0.15), transparent 45%),
+    radial-gradient(ellipse 50% 30% at 50% 100%, rgba(167, 139, 250, 0.08), transparent 50%);
+  --border: rgba(148, 163, 184, 0.1);
+  --border-strong: rgba(56, 189, 248, 0.35);
+  --shadow: 0 24px 80px rgba(0, 0, 0, 0.55);
+  --hero-overlay: linear-gradient(115deg, rgba(3, 5, 8, 0.92) 0%, rgba(3, 5, 8, 0.55) 45%, rgba(3, 5, 8, 0.35) 100%);
+  --canvas-opacity: 0.5;
+  --nav-height: 5.75rem;
+  --nav-offset: 0;
+  --crystal-bg: rgba(255, 255, 255, 0.04);
+  --crystal-border: rgba(255, 255, 255, 0.12);
+  --crystal-highlight: rgba(255, 255, 255, 0.22);
+  --crystal-blur: blur(40px) saturate(180%);
+  --crystal-shadow: 0 8px 40px rgba(0, 0, 0, 0.4), inset 0 1px 0 var(--crystal-highlight);
+  color-scheme: dark;
+}
+
+[data-theme="light"] {
+  --bg: #f8fafc;
+  --bg-elevated: #ffffff;
+  --bg-glass: rgba(255, 255, 255, 0.85);
+  --surface: #ffffff;
+  --surface-hover: #f1f5f9;
+  --text: #0c1222;
+  --text-muted: #475569;
+  --text-faint: #64748b;
+  --accent: #0284c7;
+  --accent-2: #4f46e5;
+  --accent-3: #7c3aed;
+  --accent-glow: rgba(2, 132, 199, 0.25);
+  --gradient: linear-gradient(135deg, #0284c7 0%, #4f46e5 50%, #7c3aed 100%);
+  --gradient-soft: linear-gradient(180deg, rgba(2, 132, 199, 0.08) 0%, rgba(79, 70, 229, 0.06) 100%);
+  --gradient-mesh: radial-gradient(ellipse 80% 50% at 20% -10%, rgba(2, 132, 199, 0.1), transparent 50%),
+    radial-gradient(ellipse 60% 40% at 90% 10%, rgba(79, 70, 229, 0.08), transparent 45%);
+  --border: rgba(15, 23, 42, 0.08);
+  --border-strong: rgba(2, 132, 199, 0.35);
+  --shadow: 0 24px 60px rgba(15, 23, 42, 0.1);
+  --hero-overlay: linear-gradient(115deg, rgba(248, 250, 252, 0.94) 0%, rgba(248, 250, 252, 0.7) 50%, rgba(248, 250, 252, 0.4) 100%);
+  --canvas-opacity: 0.25;
+  --crystal-bg: rgba(255, 255, 255, 0.75);
+  --crystal-border: rgba(255, 255, 255, 0.95);
+  --crystal-highlight: rgba(255, 255, 255, 1);
+  --crystal-shadow: 0 12px 40px rgba(15, 23, 42, 0.08), inset 0 1px 0 #fff;
+  color-scheme: light;
+}
+
+[data-theme="light"] .reference-card img {
+  filter: grayscale(0.05) contrast(1.05);
+}
