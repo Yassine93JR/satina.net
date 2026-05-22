@@ -54,4 +54,4 @@ Barre **fixe** en overlay glass : elle reste visible au scroll, le contenu déma
 
 ## Contact
 
-16 rue de Vichy, Paris — info@satina.fr — 06 07 09 42 06 — 01 45 86 32 96
+366 ter. rue de Vaugirard, 75015 Paris — info@satina.fr — 06 07 09 42 06 — 01 45 86 32 96

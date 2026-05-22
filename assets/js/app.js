@@ -146,7 +146,7 @@
       '        <li><a href="' + base + 'services/helpdesk.html" data-i18n="footer.helpdesk">Help desk</a></li>' +
       "      </ul></div>" +
       '      <div><h4 data-i18n="footer.contact">Contact</h4><ul>' +
-      '        <li>16 rue de Vichy, Paris</li>' +
+      '        <li>366 ter. rue de Vaugirard, Paris</li>' +
       '        <li><a href="mailto:info@satina.fr">info@satina.fr</a></li>' +
       '        <li><a href="tel:+33607094206">06 07 09 42 06</a></li>' +
       '        <li><a href="tel:+33145863296">01 45 86 32 96</a></li>' +
