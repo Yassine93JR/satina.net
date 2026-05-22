@@ -90,16 +90,16 @@
 
   function parisCapsuleHtml() {
     return (
-      '<aside class="paris-capsule crystal paris-capsule--nav" id="paris-capsule" aria-live="polite">' +
-      '  <span class="paris-capsule__dot" aria-hidden="true"></span>' +
-      '  <strong class="paris-capsule__city" data-i18n="widget.paris">Paris</strong>' +
-      '  <span class="paris-capsule__sep" aria-hidden="true">·</span>' +
+      '<aside class="paris-capsule crystal paris-capsule--square" id="paris-capsule" aria-live="polite">' +
+      '  <div class="paris-capsule__row paris-capsule__row--city">' +
+      '    <span class="paris-capsule__dot" aria-hidden="true"></span>' +
+      '    <strong class="paris-capsule__city" data-i18n="widget.paris">Paris</strong>' +
+      "  </div>" +
       '  <span class="paris-capsule__time" id="paris-time">--:--</span>' +
-      '  <span class="paris-capsule__sep" aria-hidden="true">·</span>' +
-      '  <span class="paris-capsule__weather" aria-label="Météo Paris">' +
+      '  <div class="paris-capsule__row paris-capsule__row--weather" aria-label="Météo Paris">' +
       '    <span class="paris-capsule__weather-icon" id="paris-weather-icon" aria-hidden="true">🌤️</span>' +
       '    <span class="paris-capsule__temp" id="paris-weather-temp">—</span>' +
-      "  </span>" +
+      "  </div>" +
       '  <span class="paris-capsule__avail" data-i18n="widget.available">7j/7</span>' +
       "</aside>"
     );
@@ -108,13 +108,14 @@
   function headerHtml(active) {
     return (
       '<header class="site-header" role="banner">' +
-      '  <div class="nav-ribbon crystal site-header__inner">' +
+      '  <div class="site-header__cluster">' +
+      '    <div class="site-header__widget">' + parisCapsuleHtml() + "</div>" +
+      '    <div class="nav-ribbon crystal site-header__inner">' +
       '    <a href="' + base + 'index.html" class="site-header__brand">' +
       '      <img src="' + base + 'assets/images/logo-sat1.png" alt="Satina IT Paris" width="200" height="80">' +
       '      <span class="site-header__name">Satina IT Paris</span>' +
       '    </a>' +
       '    <nav class="site-nav" aria-label="Navigation principale">' + navHtml(active) + "</nav>" +
-      '    <div class="site-header__status">' + parisCapsuleHtml() + "</div>" +
       '    <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="mobile-nav" aria-label="Menu">' +
       '      <span></span><span></span><span></span>' +
       "    </button>" +
@@ -122,6 +123,7 @@
       langPickerHtml() +
       '      <button type="button" class="theme-toggle" aria-label="Thème" data-i18n-title="theme.aria" title="Changer le thème">🌙</button>' +
       '      <a href="tel:+33607094206" class="btn btn-primary btn-sm" data-i18n="nav.call">' + navLabel("call") + "</a>" +
+      "    </div>" +
       "    </div>" +
       "  </div>" +
       "</header>" +
