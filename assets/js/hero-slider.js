@@ -2,27 +2,27 @@
   "use strict";
 
   var INTERVAL_MS = 3000;
-
   document.addEventListener("DOMContentLoaded", function () {
     var root = document.querySelector(".hero-cinematic");
     if (!root) return;
 
-    var slides = root.querySelectorAll(".hero-slide");
-    var panels = root.querySelectorAll(".hero-slide-panel");
-    var dots = root.querySelectorAll(".hero-dot");
+    var slides = Array.prototype.slice.call(root.querySelectorAll(".hero-slide"));
+    var panels = Array.prototype.slice.call(root.querySelectorAll(".hero-slide-panel"));
+    var dots = Array.prototype.slice.call(root.querySelectorAll(".hero-dot"));
     var total = slides.length;
-    if (!total) return;
+    if (total < 2) return;
 
     var index = 0;
-    var timer = null;
-    var hasGsap = typeof gsap !== "undefined";
+    var timerId = null;
 
     function resetDotFill(dot) {
       var fill = dot.querySelector(".hero-dot__fill");
       if (!fill) return;
       fill.style.animation = "none";
       void fill.offsetWidth;
-      fill.style.animation = "";
+      if (dot.classList.contains("is-active")) {
+        fill.style.animation = "dotProgress 3s linear forwards";
+      }
     }
 
     function emitChange() {
@@ -31,94 +31,73 @@
       );
     }
 
-    function animatePanel(panel) {
-      if (!panel || !hasGsap) return;
+    function animatePanelText(panel) {
+      if (!panel) return;
       var parts = panel.querySelectorAll(".tag, .hero-title, p, .hero-panel-cta > *");
-      gsap.killTweensOf(parts);
-      gsap.fromTo(
-        parts,
-        { opacity: 0, y: 32, filter: "blur(6px)" },
-        {
-          opacity: 1,
-          y: 0,
-          filter: "blur(0px)",
-          duration: 0.75,
-          stagger: 0.08,
-          ease: "power3.out",
-          overwrite: true
-        }
-      );
+      if (typeof gsap !== "undefined" && parts.length) {
+        gsap.killTweensOf(parts);
+        gsap.fromTo(
+          parts,
+          { opacity: 0, y: 20 },
+          { opacity: 1, y: 0, duration: 0.6, stagger: 0.06, ease: "power2.out", overwrite: true }
+        );
+      }
     }
 
-    function applySlideVisuals() {
-      slides.forEach(function (s, n) {
-        var active = n === index;
-        s.classList.toggle("is-active", active);
-        if (hasGsap) {
-          gsap.killTweensOf(s);
-          gsap.set(s, { opacity: active ? 1 : 0, visibility: active ? "visible" : "hidden" });
-          var bg = s.querySelector(".hero-slide__bg");
-          if (bg && active) {
-            gsap.killTweensOf(bg);
-            gsap.fromTo(bg, { scale: 1.14 }, { scale: 1, duration: 9, ease: "power1.out" });
-          }
-        }
-      });
-    }
+    function setSlide(n) {
+      index = ((n % total) + total) % total;
 
-    function goTo(i) {
-      index = ((i % total) + total) % total;
-
-      applySlideVisuals();
-
-      panels.forEach(function (p, n) {
-        var active = n === index;
-        p.classList.toggle("is-active", active);
-        if (active) animatePanel(p);
+      slides.forEach(function (slide, i) {
+        slide.classList.toggle("is-active", i === index);
       });
 
-      dots.forEach(function (d, n) {
-        d.classList.toggle("is-active", n === index);
-        resetDotFill(d);
+      panels.forEach(function (panel, i) {
+        var on = i === index;
+        panel.classList.toggle("is-active", on);
+        if (on) animatePanelText(panel);
+      });
+
+      dots.forEach(function (dot, i) {
+        dot.classList.toggle("is-active", i === index);
+        resetDotFill(dot);
       });
 
       emitChange();
     }
 
-    function next() {
-      goTo(index + 1);
+    function nextSlide() {
+      setSlide(index + 1);
     }
 
-    function startAutoplay() {
-      stopAutoplay();
-      timer = setInterval(next, INTERVAL_MS);
+    function startLoop() {
+      stopLoop();
+      timerId = window.setInterval(nextSlide, INTERVAL_MS);
     }
 
-    function stopAutoplay() {
-      if (timer) {
-        clearInterval(timer);
-        timer = null;
+    function stopLoop() {
+      if (timerId) {
+        window.clearInterval(timerId);
+        timerId = null;
       }
     }
 
     dots.forEach(function (dot) {
       dot.addEventListener("click", function () {
-        var goto = parseInt(dot.getAttribute("data-goto"), 10);
-        if (!isNaN(goto)) goTo(goto);
-        startAutoplay();
+        var n = parseInt(dot.getAttribute("data-goto"), 10);
+        if (!isNaN(n)) setSlide(n);
+        startLoop();
       });
     });
 
-    root.addEventListener("mouseenter", stopAutoplay);
-    root.addEventListener("mouseleave", startAutoplay);
+    document.addEventListener("visibilitychange", function () {
+      if (document.hidden) {
+        stopLoop();
+      } else {
+        startLoop();
+      }
+    });
 
-    if (hasGsap) {
-      slides.forEach(function (s, n) {
-        gsap.set(s, { opacity: n === 0 ? 1 : 0, visibility: n === 0 ? "visible" : "hidden" });
-      });
-    }
-
-    goTo(0);
-    startAutoplay();
+    setSlide(0);
+    startLoop();
   });
 })();

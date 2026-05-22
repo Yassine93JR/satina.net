@@ -819,18 +819,6 @@ body.js-ready .reveal.visible,
   box-shadow: 0 0 30px var(--accent-glow);
 }
 
-.hero-slide.is-active .hero-slide__bg {
-  animation: heroKenBurns 12s ease-out forwards;
-}
-
-@keyframes heroKenBurns {
-  from { transform: scale(1.14); }
-  to { transform: scale(1); }
-}
-
-.hero-slide:not(.is-active) .hero-slide__bg {
-  transform: scale(1.08);
-}
 
 .hero-fx {
   position: absolute;
@@ -918,16 +906,14 @@ body.js-ready .reveal.visible,
   visibility: hidden;
   z-index: 0;
   pointer-events: none;
-}
-
-.hero-slide.is-active {
-  pointer-events: auto;
+  transition: opacity 0.9s ease-in-out, visibility 0.9s ease-in-out;
 }
 
 .hero-slide.is-active {
   opacity: 1;
   visibility: visible;
   z-index: 1;
+  pointer-events: auto;
 }
 
 .hero-slide__bg {
@@ -935,13 +921,20 @@ body.js-ready .reveal.visible,
   inset: -4%;
   background-size: cover;
   background-position: center;
-  transform: scale(1.12);
-  transition: transform 10s cubic-bezier(0.25, 0.1, 0.25, 1), opacity 1.2s ease;
+  transform: scale(1.08);
+  transition: transform 8s ease-out;
   filter: saturate(1.08) contrast(1.05);
+  will-change: transform;
 }
 
 .hero-slide.is-active .hero-slide__bg {
   transform: scale(1);
+  animation: heroKenBurns 8s ease-out forwards;
+}
+
+@keyframes heroKenBurns {
+  from { transform: scale(1.1); }
+  to { transform: scale(1); }
 }
 
 .hero-slide__overlay {
@@ -1083,10 +1076,10 @@ body.js-ready .reveal.visible,
   font-weight: 800;
   line-height: 1;
   font-variant-numeric: tabular-nums;
-  background: var(--gradient);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+  color: #ffffff;
+  -webkit-text-fill-color: #ffffff;
+  background: none;
+  text-shadow: 0 2px 24px rgba(0, 0, 0, 0.35);
   position: relative;
   z-index: 1;
 }
@@ -1097,11 +1090,17 @@ body.js-ready .reveal.visible,
   font-weight: 600;
   letter-spacing: 0.04em;
   text-transform: uppercase;
-  color: var(--text-muted);
+  color: #ffffff;
   line-height: 1.35;
   max-width: 9rem;
   position: relative;
   z-index: 1;
+  text-shadow: 0 1px 12px rgba(0, 0, 0, 0.4);
+}
+
+.crystal-stat__label--highlight {
+  color: #ffffff;
+  font-weight: 700;
 }
 
 .stat-item__value {

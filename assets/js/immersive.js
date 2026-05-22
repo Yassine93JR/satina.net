@@ -7,14 +7,18 @@
 
     var slides = hero.querySelectorAll(".hero-slide__bg");
     hero.addEventListener("mousemove", function (e) {
+      var active = hero.querySelector(".hero-slide.is-active .hero-slide__bg");
+      if (!active) return;
       var rect = hero.getBoundingClientRect();
       var x = (e.clientX - rect.left) / rect.width - 0.5;
       var y = (e.clientY - rect.top) / rect.height - 0.5;
-      slides.forEach(function (bg, i) {
-        var depth = (i + 1) * 8;
-        bg.style.transform =
-          "scale(1.05) translate(" + x * depth + "px, " + y * depth + "px)";
-      });
+      active.style.transform =
+        "scale(1.02) translate(" + x * 10 + "px, " + y * 10 + "px)";
+    });
+
+    hero.addEventListener("mouseleave", function () {
+      var active = hero.querySelector(".hero-slide.is-active .hero-slide__bg");
+      if (active) active.style.transform = "";
     });
   }
 
